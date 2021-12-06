@@ -43,7 +43,7 @@ public class PostControl {
         return "redirect:/";
     }
 
-    @PostMapping("/add.comment")
+    @PostMapping("/addComment")
     public String addComment(@RequestParam("id") int id,
                              HttpServletRequest request,
                              Model model) {

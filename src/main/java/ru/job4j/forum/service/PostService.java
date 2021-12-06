@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.Post;
 import ru.job4j.forum.repository.PostMem;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Optional;
 
 @Service
@@ -16,7 +16,7 @@ public class PostService {
         this.postMem = postMem;
     }
 
-    public List<Post> getAll() {
+    public Collection<Post> getAll() {
         return postMem.getAll();
     }
 

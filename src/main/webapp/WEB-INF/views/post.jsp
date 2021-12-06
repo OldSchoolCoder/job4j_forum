@@ -86,7 +86,7 @@
         </div>
     </c:forEach>
     <h5 class="text-center pt-3">Add comment</h5>
-    <form action="<c:url value='/add.comment?id=${post.id}'/>" method='POST'>
+    <form action="<c:url value='/addComment?id=${post.id}'/>" method='POST'>
         <div class="mb-3 text-center">
             <textarea class="form-control" id="overview" rows="3" name="comment"></textarea>
         </div>

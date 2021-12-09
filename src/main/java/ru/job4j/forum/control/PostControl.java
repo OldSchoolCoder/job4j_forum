@@ -51,6 +51,7 @@ public class PostControl {
         Optional<Post> postOptional = postService.findById(id);
         Post post = postOptional.orElseThrow();
         post.addComment(comment);
+        postService.save(post);
         model.addAttribute("post", post);
         return "post";
     }

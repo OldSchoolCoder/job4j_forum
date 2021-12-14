@@ -56,10 +56,10 @@
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         </span>
                     </span>
-                <div class="text-dark">username</div>
+                <div class="text-dark">${user.username}</div>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                <li><a class="dropdown-item" href="/login">Sign out</a></li>
+                <li><a class="dropdown-item" href="/logout">Sign out</a></li>
             </ul>
         </div>
         </header>
@@ -83,7 +83,7 @@
                             <c:out value="${post.name}"/>
                         </strong>
                     </div>
-                    <span class="d-block text-success">@username</span>
+                    <span class="d-block text-success">@${post.user.username}</span>
                 </div>
                 <a href="<c:url value='/update?id=${post.id}'/>">
                     <span style="font-size: 1.2rem;">

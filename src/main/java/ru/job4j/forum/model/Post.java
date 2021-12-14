@@ -17,6 +17,9 @@ public class Post {
     private String description;
     private Calendar created;
 
+    @ManyToOne
+    private User user;
+
     @ElementCollection
     private List<String> comments = new ArrayList<>();
 
@@ -26,6 +29,21 @@ public class Post {
     }
 
     public Post() {
+    }
+
+    public Post(int id, String name, String description, User user) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void addComment(String comment) {

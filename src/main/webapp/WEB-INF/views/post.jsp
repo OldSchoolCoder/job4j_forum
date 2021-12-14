@@ -56,10 +56,10 @@
               <i class="fa fa-user-circle" aria-hidden="true"></i>
             </span>
           </span>
-                <div class="text-dark">username</div>
+                <div class="text-dark">${login.username}</div>
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                <li><a class="dropdown-item" href="/login">Sign out</a></li>
+                <li><a class="dropdown-item" href="/logout">Sign out</a></li>
             </ul>
         </div>
         </header>
@@ -72,20 +72,20 @@
                value="" disabled>
         <label class="list-group-item py-3" for="listGroupCheckableRadios1">
             <c:out value="${post.description}"/>
-            <span class="d-block small opacity-75 text-success">@username</span>
+            <span class="d-block small opacity-75 text-success">@${post.user.username}</span>
         </label>
     </div>
     <c:forEach items="${post.comments}" var="comment">
         <div class="list-group list-group-checkable">
-            <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1"
+            <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios"
+                   id="listGroupCheckableRadios2"
                    value="" disabled>
-            <label class="list-group-item py-3" for="listGroupCheckableRadios1">
+            <label class="list-group-item py-3" for="listGroupCheckableRadios2">
                 <c:out value="${comment}"/>
-                <span class="d-block small opacity-75 text-success">@username</span>
             </label>
         </div>
     </c:forEach>
-    <h5 class="text-center pt-3">Add comment</h5>
+    <h5 class="text-center pt-3">Add anonymous comment</h5>
     <form action="<c:url value='/addComment?id=${post.id}'/>" method='POST'>
         <div class="mb-3 text-center">
             <textarea class="form-control" id="overview" rows="3" name="comment"></textarea>

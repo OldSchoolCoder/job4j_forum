@@ -34,10 +34,10 @@
                 <h2 class="fw-bold mb-0">Sign-up</h2>
             </div>
             <div class="modal-body p-5 pt-0">
-                <form action="<c:url value='/login'/>" method='POST'>
+                <form action="<c:url value='/reg'/>" method='POST'>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control rounded-4" id="floatingInput"
-                               placeholder="name@example.com" name="name">
+                               placeholder="name@example.com" name="username">
                         <label for="floatingInput">UserName</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -46,7 +46,7 @@
                         <label for="floatingPassword">Password</label>
                     </div>
                     <button class="w-100 mb-4 btn btn-lg rounded-4 text-white"
-                            style="background-color: rgb(166, 236, 10);" type="submit">Submit
+                            style="background-color: rgb(166, 236, 10);" type="submit" name="submit" value="submit">Submit
                     </button>
                     <a href="/" class="w-100 py-2 mb-2 btn btn-outline-success rounded-4">Go to main
                         page</a>

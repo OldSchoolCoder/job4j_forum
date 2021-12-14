@@ -31,13 +31,16 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content rounded-5 shadow text-center">
             <div class="p-5 pb-4 border-bottom-0 justify-content-center">
-                <h2 class="fw-bold mb-0">Login</h2>
+                <h2 class="fw-bold mb-1">Login</h2>
+                <c:if test="${not empty errorMessage}">
+                    <h5 class="modal-title">${errorMessage}</h5>
+                </c:if>
             </div>
             <div class="modal-body p-5 pt-0">
                 <form action="<c:url value='/login'/>" method='POST'>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control rounded-4" id="floatingInput"
-                               placeholder="name@example.com" name="name">
+                               placeholder="name@example.com" name="username">
                         <label for="floatingInput">UserName</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -46,9 +49,10 @@
                         <label for="floatingPassword">Password</label>
                     </div>
                     <button class="w-100 mb-4 btn btn-lg rounded-4 text-white"
-                            style="background-color: rgb(166, 236, 10);" type="submit">Submit
+                            style="background-color: rgb(166, 236, 10);" type="submit" name="submit" value="submit">Submit
                     </button>
                     <a href="/reg" class="w-100 py-2 mb-2 btn btn-outline-success rounded-4">Sign-up</a>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </form>
             </div>
         </div>

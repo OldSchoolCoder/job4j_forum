@@ -35,7 +35,7 @@
             <div class="modal-body p-5 pt-0">
                 <form action="<c:url value='/save'/>" method='POST'>
                     <div class="form-floating mb-3">
-                        <input type="hidden" name="id" value="0" id="hidden">
+                        <input type="hidden" name="id" value="0">
                         <input type="text" class="form-control rounded-4" id="floatingInput"
                                placeholder="name@example.com" name="name">
                         <label for="floatingInput">Name</label>

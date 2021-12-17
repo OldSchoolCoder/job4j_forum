@@ -1,5 +1,6 @@
 package ru.job4j.forum.service;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -48,11 +49,12 @@ public class PostService {
         return postRepository.findById(id);
     }
 
-    public void reg(User user) throws Exception {
+    public void reg(User user) {
         String name = user.getUsername();
         Optional<User> optionalUser = userRepository.findUserByUsername(name);
         if (optionalUser.isPresent()) {
-            throw new Exception("Registration Error! User already exists!");
+            throw new DataIntegrityViolationException("Registration Error! " +
+                    "User already exists!");
         } else {
             user.setEnabled(true);
             user.setPassword(encoder.encode(user.getPassword()));

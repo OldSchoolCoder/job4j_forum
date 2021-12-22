@@ -1,3 +1,5 @@
+CREATE DATABASE forum;
+
 create table posts
 (
     id          serial primary key,

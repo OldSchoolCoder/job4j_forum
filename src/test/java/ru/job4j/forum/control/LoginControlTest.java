@@ -24,7 +24,6 @@ class LoginControlTest {
 
     @Test
     @WithMockUser
-    @Sql({"/schema.sql", "/security.schema"})
     void loginPageTest() throws Exception {
         mockMvc.perform(get("/login")
                 .param("error", "true"))
@@ -35,11 +34,9 @@ class LoginControlTest {
 
     @Test
     @WithMockUser
-    @Sql({"/schema.sql", "/security.schema"})
     void logoutPageTest() throws Exception {
         mockMvc.perform(get("/logout"))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection());
     }
-
 }

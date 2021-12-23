@@ -24,7 +24,6 @@ public class IndexControlTest {
 
     @Test
     @WithMockUser
-    @Sql({"/schema.sql", "/security.schema"})
     public void shouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/index"))
                 .andDo(print())

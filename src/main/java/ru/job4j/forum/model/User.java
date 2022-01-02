@@ -23,6 +23,10 @@ public class User {
     public User() {
     }
 
+    public User(String username) {
+        this.username = username;
+    }
+
     public int getId() {
         return id;
     }

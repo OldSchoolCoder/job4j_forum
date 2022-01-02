@@ -14,8 +14,6 @@ import java.util.logging.Logger;
 @Controller
 public class RegControl {
 
-    private static final Logger LOGGER = Logger.getLogger(RegControl
-            .class.getName());
     private final PostService postService;
 
     public RegControl(PostService postService) {

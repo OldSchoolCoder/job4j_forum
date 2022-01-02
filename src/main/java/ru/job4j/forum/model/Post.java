@@ -31,6 +31,10 @@ public class Post {
     public Post() {
     }
 
+    public Post(String name) {
+        this.name = name;
+    }
+
     public Post(int id, String name, String description, User user) {
         this.id = id;
         this.name = name;

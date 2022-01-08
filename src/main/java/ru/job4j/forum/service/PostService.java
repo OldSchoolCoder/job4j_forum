@@ -10,6 +10,7 @@ import ru.job4j.forum.store.AuthorityRepository;
 import ru.job4j.forum.store.PostRepository;
 import ru.job4j.forum.store.UserRepository;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -42,6 +43,7 @@ public class PostService {
         User owner = userRepository.findUserByUsername(onlineUser)
                 .orElseThrow();
         post.setUser(owner);
+        post.setCreated(Calendar.getInstance());
         postRepository.save(post);
     }
 

@@ -42,6 +42,15 @@ public class Post {
         this.user = user;
     }
 
+    public Post(int id, String name, String description,
+                Calendar created, User user) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.created = created;
+        this.user = user;
+    }
+
     public User getUser() {
         return user;
     }

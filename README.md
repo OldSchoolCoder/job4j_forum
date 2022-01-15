@@ -1,3 +1,5 @@
+[Ссылка на сервер в приложением](https://shielded-thicket-52036.herokuapp.com/)
+
 ![ScreenShot](images/1.png)
 
 В этом уроке мы избавимся от tomcat за счет модуля Spring Boot.
